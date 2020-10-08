@@ -16,7 +16,7 @@ struct Opt {
 }
 
 #[derive(Deserialize)]
-struct IgnoreTemplate<'a> {
+pub struct IgnoreTemplate<'a> {
     id: &'a str,
     text: &'a str,
 }
@@ -81,7 +81,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         let template_string = find_templates().await?;
         let template_vec = parse_templates(&template_string);
         prompt::prompt_begin();
-        prompt::render_interactive_selector();
+        prompt::render_interactive_selector(&template_vec);
     } else {
         match opt.ignore_list {
             Some(x) => {
