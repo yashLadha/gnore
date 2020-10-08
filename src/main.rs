@@ -77,10 +77,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let mut ignore_list: String = String::from("");
 
-    let template_string = find_templates().await?;
-    let template_vec = parse_templates(&template_string);
-
     if interactive_list {
+        let template_string = find_templates().await?;
+        let template_vec = parse_templates(&template_string);
         prompt::prompt_begin();
         prompt::render_interactive_selector();
     } else {
