@@ -75,13 +75,19 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let opt = Opt::from_args();
     let interactive_list = opt.interactive;
 
-    let mut ignore_list: String = String::from("");
+    let ignore_list: String;
 
     if interactive_list {
         let template_string = find_templates().await?;
         let template_vec = parse_templates(&template_string);
-        prompt::prompt_begin();
-        prompt::render_interactive_selector(&template_vec);
+        match prompt::render_interactive_selector(&template_vec) {
+            Some(selection_list) => {
+                ignore_list = selection_list;
+            }
+            None => {
+                process::exit(1);
+            }
+        }
     } else {
         match opt.ignore_list {
             Some(x) => {
@@ -92,6 +98,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 process::exit(1);
             }
         }
+    }
+
+    if ignore_list.len() == 0 {
+        eprintln!("Empty ignore list generated, terminating");
+        process::exit(1);
     }
 
     fetch_gitignore_request(ignore_list).await?;
