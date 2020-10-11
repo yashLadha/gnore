@@ -9,6 +9,7 @@ pub fn render_interactive_selector(templates: &Vec<IgnoreTemplate>) -> Option<St
         .items(&render_strings[..])
         .defaults(&defaults[..])
         .paged(true)
+        .page_size(10)
         .interact()
         .unwrap();
 
