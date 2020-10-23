@@ -1,4 +1,4 @@
-## ⚠ ignore
+## ⚠ gnore
 
 CLI port of the awesome [gitignore.io](https://gitignore.io) in rust because 😅 WHY NOT!!!!
 
@@ -26,7 +26,7 @@ $ cargo build --release
 
 3. You can the generated binary at the following path
 ```sh
-$ ./target/release/ignore
+$ ./target/release/gnore
 ```
 
 ## 💻 Demo

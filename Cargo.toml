@@ -1,5 +1,5 @@
 [package]
-name = "ignore"
+name = "gnore"
 version = "0.1.0"
 authors = ["yashladha"]
 edition = "2018"
@@ -7,8 +7,8 @@ keywords = ["cli", "gitignore", "git", "ignore", "prompt"]
 categories = ["command-line-interface"]
 description = "gitignore.io cli"
 license = "MIT"
-homepage = "https://github.com/yashladha/ignore"
-repository = "https://github.com/yashladha/ignore"
+homepage = "https://github.com/yashladha/gnore"
+repository = "https://github.com/yashladha/gnore"
 readme = "README.md"
 
 [dependencies]
