@@ -5,6 +5,7 @@ authors = ["yashladha"]
 edition = "2018"
 keywords = ["cli", "gitignore", "git", "ignore", "prompt"]
 categories = ["command-line-interface"]
+description = "gitignore.io cli"
 license = "MIT"
 homepage = "https://github.com/yashladha/ignore"
 repository = "https://github.com/yashladha/ignore"
