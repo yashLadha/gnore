@@ -1,5 +1,5 @@
 use crate::IgnoreTemplate;
-use dialoguer::{theme::ColorfulTheme, MultiSelect};
+use termprompt::{theme::ColorfulTheme, MultiSelect};
 
 pub fn render_interactive_selector(templates: &Vec<IgnoreTemplate>) -> Option<String> {
     let render_strings: Vec<&str> = templates.into_iter().map(|x| x.text).collect();
